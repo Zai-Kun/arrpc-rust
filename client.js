@@ -116,7 +116,7 @@
             }
         };
     }
-
+    connectWebSocket();
     function reconnectWebSocket() {
         if (ws && ws.readyState !== WebSocket.CLOSED) {
             console.log("WebSocket is already open.");
