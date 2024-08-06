@@ -160,13 +160,17 @@
         }
     }
 
-    function observeToolbarChanges() {
-        const targetNode = document.querySelector('#app-mount');
+    async function observeToolbarChanges() {
+        async function wait(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
 
-        if (!targetNode) {
+        let targetNode = document.querySelector('#app-mount');
+
+        while (!targetNode) {
             console.log('Discord app mount not found, retrying...');
-            setTimeout(observeToolbarChanges, 5000);
-            return;
+            await wait(5000);
+            targetNode = document.querySelector('#app-mount');
         }
 
         const config = {
@@ -185,5 +189,6 @@
     }
 
     observeToolbarChanges();
+
 })();
 
