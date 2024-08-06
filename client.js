@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ReconnectButton
 // @namespace    http://tampermonkey.net/
-// @version      2024-03-25
+// @version      2024-08-06
 // @description  try to take over the world!
 // @author       Zai
 // @match        *://*.discord.com/*
