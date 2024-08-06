@@ -7,6 +7,8 @@
 // @match        *://*.discord.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=discord.com
 // @grant        none
+// @updateURL    https://raw.githubusercontent.com/Zai-Kun/arrpc-rust/master/client.js
+// @downloadURL  https://raw.githubusercontent.com/Zai-Kun/arrpc-rust/master/client.js
 // ==/UserScript==
 
 (function() {
@@ -87,7 +89,7 @@
 
             if (msg.activity?.assets?.large_image) msg.activity.assets.large_image = await getApplicationAsset(msg.activity.application_id, msg.activity.assets.large_image, lookupAsset);
             if (msg.activity?.assets?.small_image) msg.activity.assets.small_image = await getApplicationAsset(msg.activity.application_id, msg.activity.assets.small_image, lookupAsset);
-            
+
             if (msg.activity) {
                 const appId = msg.activity.application_id;
                 if (!apps[appId]) apps[appId] = await lookupApp(appId);
@@ -184,3 +186,4 @@
 
     observeToolbarChanges();
 })();
+
