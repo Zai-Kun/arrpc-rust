@@ -130,7 +130,7 @@
     }
 
     function addButtonToToolbar() {
-        const toolbar = document.querySelector('.toolbar_e44302');
+        const toolbar = document.querySelector('.toolbar_fc4f04');
 
         if (toolbar && !document.getElementById('reconnectButton')) {
             const reconnectButton = document.createElement("button");
